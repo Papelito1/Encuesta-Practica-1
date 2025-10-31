@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Encuesta FICCT - Carreras de Informática, Sistemas y Redes</title>
+	<meta name="description" content="Encuesta universitaria general de la FICCT (UAGRM)">
+	<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+	<main class="page">
+		<section class="survey-card" aria-labelledby="titulo-encuesta">
+			<header class="header">
+				<div class="logo" aria-hidden="true">FICCT</div>
+				<h1 id="titulo-encuesta" class="title">Encuesta FICCT - Carreras de Informática, Sistemas y Redes</h1>
+				<p class="subtitle">Facultad de Ciencias de la Computación y Telecomunicaciones · UAGRM</p>
+			</header>
+
+			<form id="encuestaForm" class="form" novalidate>
+				<div class="form-grid">
+					<div class="form-field full">
+						<label for="nombre">Nombre completo</label>
+						<input type="text" id="nombre" name="nombre" placeholder="Ej: María Fernanda Pérez" required>
+					</div>
+
+					<div class="form-field">
+						<label for="carrera">Carrera</label>
+						<select id="carrera" name="carrera" required>
+							<option value="" disabled selected>Selecciona tu carrera</option>
+							<option>Ingeniería Informática</option>
+							<option>Ingeniería de Sistemas</option>
+							<option>Redes y Telecomunicaciones</option>
+						</select>
+					</div>
+
+					<div class="form-field">
+						<label for="semestre">Semestre actual</label>
+						<input type="number" id="semestre" name="semestre" inputmode="numeric" min="1" max="12" step="1" placeholder="Ej: 3" required>
+					</div>
+
+					<div class="form-field">
+						<label for="horas">Horas de estudio diarias</label>
+						<select id="horas" name="horas" required>
+							<option value="" disabled selected>Selecciona una opción</option>
+							<option>menos de 2</option>
+							<option>2-4</option>
+							<option>más de 4</option>
+						</select>
+					</div>
+
+					<div class="form-field">
+						<label for="materia">Materia que considera más difícil</label>
+						<input type="text" id="materia" name="materia" placeholder="Ej: Probabilidad y Estadística 1" required>
+					</div>
+
+					<div class="form-field">
+						<label for="interes">Nivel de interés por la carrera: <output id="interesOutput" for="interes">3</output>/5</label>
+						<input type="range" id="interes" name="interes" min="1" max="5" value="3" step="1">
+						<div class="ticks" aria-hidden="true">
+							<span>1</span><span>2</span><span>3</span><span>4</span><span>5</span>
+						</div>
+					</div>
+
+					<div class="form-field full">
+						<label for="opinion">Opinión general sobre la carga académica</label>
+						<textarea id="opinion" name="opinion" rows="4" placeholder="Comparte tu opinión..." required></textarea>
+					</div>
+				</div>
+
+				<div class="actions">
+					<button type="submit" class="btn-primary">Enviar encuesta</button>
+				</div>
+
+				<p id="mensajeExito" class="success" role="status" aria-live="polite" hidden>✅ Gracias por tu respuesta. Tus datos han sido registrados correctamente.</p>
+			</form>
+
+			<footer class="footer">
+				<small>Esta encuesta es con fines académicos para Programación 2 y Probabilidad y Estadística 1.</small>
+			</footer>
+		</section>
+	</main>
+
+	<script src="script.js"></script>
+</body>
+</html>
+
